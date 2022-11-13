@@ -18,7 +18,7 @@
 		<div>
 			<h2>Things I've Made</h2>
 			<div class="links">
-				<a href="https://mikhad.github.io.wordle">Wordle+</a>
+				<a href="https://mikhad.github.io/wordle">Wordle+</a>
 				<a href="https://github.com/MikhaD/nfr-bot">Discord bot</a>
 				<a href="https://mikhad.github.io/flexbox-sandbox/">Flexbox Sandbox</a>
 				<a href="https://mikhad.github.io/what-the-weather">What the Weather</a>
