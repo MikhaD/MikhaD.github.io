@@ -8,18 +8,18 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - name: install node v16
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - name: install node v18
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - name: install dependencies
-        run: npm ci
+        run: npm i
       - name: compile
         run: npm run build
-      - name: deploy to gh_pages branch
+      - name: deploy to pages branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh_pages
+          publish_branch: gh-pages
           publish_dir: ./build

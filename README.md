@@ -9,4 +9,12 @@ This is what will soon become my portfolio website. I previously had some basic 
 - [Level up tutorials](https://leveluptutorials.com)
 
 ## To Do
-- Something needs to be done about pages/. I either need to update them and turn them into sveltekit routes or get rid of them.
+- static/pages need to be turned into sveltekit routes.
+
+### cubic-bezier
+- Add mechanism to allow user to paste in a cubic-bezier
+- Allow user to add custom curves to library with name (store in localStorage)
+- Button to play animation
+- option to repeat animation
+- button to copy curve
+- slider to adjust animation speed

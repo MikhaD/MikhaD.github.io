@@ -1,42 +1,23 @@
 {
-	"name": "portfolio-site",
-	"author": "MikhaD",
-	"version": "0.0.0",
-	"license": "GPL-3.0",
-	"private": "true",
-	"type": "module",
+	"name": "2.0",
+	"version": "0.0.1",
+	"private": true,
 	"scripts": {
-		"dev": "svelte-kit dev --open",
-		"build": "svelte-kit build",
-		"package": "svelte-kit package",
-		"preview": "svelte-kit preview",
-		"prepare": "svelte-kit sync",
-		"check": "svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/MikhaD/MikhaD.github.io.git"
-	},
-	"keywords": [
-		"portfolio",
-		"MikhaD",
-		"developer"
-	],
-	"bugs": {
-		"url": "https://github.com/MikhaD/MikhaD.github.io/issues"
-	},
-	"homepage": "https://mikhad.github.io",
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^1.0.0-next.34",
-		"@sveltejs/kit": "next",
-		"svelte": "^3.44.0",
-		"svelte-check": "^2.7.1",
-		"svelte-preprocess": "^4.10.6",
-		"tslib": "^2.3.1",
-		"typescript": "^4.7.2"
+		"@sveltejs/adapter-static": "^2.0.1",
+		"@sveltejs/kit": "^1.12.0",
+		"sass": "^1.59.3",
+		"svelte": "^3.57.0",
+		"svelte-check": "^3.1.4",
+		"tslib": "^2.5.0",
+		"typescript": "^5.0.2",
+		"vite": "^4.2.0"
 	},
-	"dependencies": {
-		"sass": "^1.52.3"
-	}
+	"type": "module"
 }
