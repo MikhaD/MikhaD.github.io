@@ -64,7 +64,7 @@
 	}
 	.links {
 		& * {
-			color: var(--fg-primary);
+			color: var(--fg-00);
 			display: block;
 		}
 	}
@@ -73,13 +73,15 @@
 		display: block;
 		margin: auto;
 		max-width: 100%;
-		fill: var(--fg-primary);
+		fill: var(--fg-00);
 	}
 
-	#cog {
-		animation: cog 2s linear infinite;
-		transform-origin: center;
-		transform-box: fill-box;
+	@media (prefers-reduced-motion: no-preference) {
+		#cog {
+			animation: cog 2s linear infinite;
+			transform-origin: center;
+			transform-box: fill-box;
+		}
 	}
 
 	@keyframes cog {
