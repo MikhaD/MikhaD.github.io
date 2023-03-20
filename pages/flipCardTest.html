@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			box-sizing: border-box;
+		}
+
+		:root {
+			font-size: 62.5%;
+			height: 100%;
+
+			--bg-00: hsl(0 0% 7.5%);
+			--bg-01: hsl(0 0% 10%);
+			--bg-02: hsl(0 0% 12.5%);
+
+			background-color: var(--bg-00);
+		}
+
+		body {
+			height: 100%;
+			display: grid;
+			place-items: center;
+		}
+
+		div {
+			display: grid;
+			place-items: center;
+			font-size: 3rem;
+			color: beige;
+			font-family: Helvetica, Arial, sans-serif;
+		}
+
+		.flipper {
+			width: 50vh;
+			height: 40vh;
+			perspective: 100rem;
+			position: relative;
+			cursor: pointer;
+			transform-style: preserve-3d;
+		}
+
+		.flipper div {
+			position: absolute;
+			inset: 0;
+			backface-visibility: hidden;
+			transition: transform 0.8s ease-in-out;
+			border: 1rem solid beige;
+		}
+
+		.flipper-front {
+			background: linear-gradient(darkmagenta, dodgerblue)
+		}
+
+		.flipper-back {
+			background: linear-gradient(red, yellow);
+			transform: rotateX(-180deg);
+		}
+
+		.flipper.hover:hover .flipper-front {
+			transform: rotateX(20deg)
+		}
+
+		.flipper.flipped .flipper-front {
+			transform: rotateX(180deg)
+		}
+
+		.flipper.flipped .flipper-back {
+			transform: rotateX(0deg)
+		}
+	</style>
+	<title>Flip Card</title>
+</head>
+
+<body>
+	<div class="flipper hover">
+		<div class="flipper-front">This is</div>
+		<div class="flipper-back">a flip card</div>
+	</div>
+</body>
+<script>
+	var flipper = document.querySelector(".flipper");
+	var flipped = false;
+	var flipBack, hover;
+	function resetFlip() {
+		flipper.classList.remove("flipped");
+		flipper.classList.add("hover");
+		flipped = false;
+	}
+	flipper.addEventListener("click", () => {
+		if (flipped)
+			resetFlip();
+		else {
+			flipper.classList.add("flipped");
+			flipper.classList.remove("hover");
+			clearTimeout(flipBack);
+			flipBack = setTimeout(resetFlip, 4000);
+			flipped = true;
+		}
+	});
+</script>
+
+</html>

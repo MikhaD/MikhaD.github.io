@@ -1,0 +1,64 @@
+.main.compareTab {
+	height: 100%;
+	display: none;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+	.colcont {
+		background-color: var(--bg-color);
+		overflow: hidden;
+		position: relative;
+		border-radius: var(--border-rad);
+		font-size: 2rem;
+	}
+	.col {
+		overflow: auto;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding-bottom: 4rem;
+	}
+	&.activeTab {
+		display: grid;
+	}
+}
+
+.indicator {
+	background-color: #000;
+	color: #fff;
+	position: absolute;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 4rem;
+	padding: 1rem;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.chest {
+	border-radius: var(--border-rad);
+	height: 4rem;
+	background-color: #b18268;
+	color: white;
+	display: grid;
+	grid-template-columns: 1fr repeat(3, 2fr);
+	padding: 1rem;
+	margin: 0.5rem;
+	box-shadow: 0.25rem 0.25rem 0.4rem rgba(0, 0, 0, 0.5);
+	&.both {
+		background-color: rgb(79, 155, 79);
+	}
+	&.empty {
+		background-color: transparent;
+		box-shadow: none;
+	}
+	img {
+		height: 2.5rem;
+	}
+	.axis {
+		display: inline-block;
+		text-align: center;
+	}
+}

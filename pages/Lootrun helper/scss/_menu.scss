@@ -1,0 +1,65 @@
+aside {
+	border-radius: var(--border-rad);
+	--menu-margin: 1rem 0;
+	margin: 1rem 1rem 0 0;
+	display: grid;
+	grid-template-rows: 1fr 20fr;
+}
+
+.menu {
+	padding: 0 1rem;
+	background-color: var(--bg-color);
+	display: none;
+	&.activeTab {
+		display: block;
+	}
+}
+
+.tabs {
+	border-top-left-radius: var(--border-rad);
+	border-top-right-radius: var(--border-rad);
+	left: 0; top: 0;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	overflow: hidden;
+}
+
+.tab {
+	display: grid;
+	user-select: none;
+	place-items: center;
+	font-size: 1.6rem;
+	cursor: pointer;
+	background-color: var(--not-selected);
+	&:not( :last-child) {
+		border-right: rgb(180, 180, 180) 1px solid;
+	}
+	&.activeTab {
+		font-weight: 600;
+		background-color: var(--bg-color);
+	}
+}
+
+.button {
+	display: grid;
+	place-items: center;
+	user-select: none;
+	cursor: pointer;
+	font-weight: 600;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	text-align: center;
+	width: auto;
+	margin: var(--menu-margin);
+	&:active {
+		scale: 0.9;
+	}
+	&[disabled="true"] {
+		background-color: #535353 !important;
+		cursor: default !important;
+		&:active {
+			scale: none !important;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@400;500;700&display=swap');
+@import "normalize";
+@import "variables";
+@import "resets";
+
+@import "main";
+@import "menu";
+
+@import "menu/find";
+@import "menu/compare";
+@import "menu/map";
+
+@import "main/find";
+@import "main/compare";
+@import "main/map";

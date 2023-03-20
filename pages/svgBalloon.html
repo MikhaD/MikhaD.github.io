@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" href="../img/new-animated-balloon.svg" type="image/x-icon">
+	<style>
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+		}
+
+		:root {
+			font-size: 62.5%;
+			height: 100%;
+			font-family: Helvetica, Arial, sans-serif;
+
+			--bg-00: hsl(0 0% 7.5%);
+			--bg-01: hsl(0 0% 10%);
+			--bg-02: hsl(0 0% 12.5%);
+
+			background-color: var(--bg-00);
+			color: #fff;
+		}
+
+		body {
+			font-size: 1.6rem;
+			height: 100%;
+			margin: 0;
+
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			align-content: start;
+			gap: 2rem;
+			padding: 2rem;
+		}
+
+		.frame {
+			width: 40rem;
+			padding: 3rem;
+			background-color: var(--bg-02);
+			border-radius: .5rem;
+			text-align: center;
+		}
+	</style>
+	<title>SVG Balloon Comparison</title>
+</head>
+
+<body>
+	<div class="frame">
+		<img src="../img/old-animated-balloon.svg" alt="animated hot air balloon">
+		<div>This is the one I animated with a tool several years ago. 17 296 characters.</div>
+	</div>
+	<div class="frame">
+		<img src="../img/new-animated-balloon.svg" alt="animated hot air balloon">
+		<div>This is the one I animated (and partially drew) by hand. 4 896 characters.</div>
+	</div>
+</body>
+
+</html>
