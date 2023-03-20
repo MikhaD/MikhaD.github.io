@@ -13,10 +13,12 @@
 			}
 		}
 
-		#cog {
-			animation: cog 2s linear infinite;
-			transform-origin: center;
-			transform-box: fill-box;
+		@media (prefers-reduced-motion: no-preference) {
+			#cog {
+				animation: cog 2s linear infinite;
+				transform-origin: center;
+				transform-box: fill-box;
+			}
 		}
 
 		@keyframes cog {
