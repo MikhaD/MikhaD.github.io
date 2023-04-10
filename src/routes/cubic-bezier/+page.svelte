@@ -8,6 +8,7 @@
 	let x2 = 1;
 	let y2 = 0.5;
 	let loaded = false;
+	let animation_key = false;
 
 	function format(n: number) {
 		let result = n.toFixed(2);
@@ -21,10 +22,7 @@
 		if (document.location.hash) {
 			const components = document.location.hash.slice(1).split(",");
 			if (components.length === 4) {
-				x1 = parseFloat(components[0]);
-				y1 = parseFloat(components[1]);
-				x2 = parseFloat(components[2]);
-				y2 = parseFloat(components[3]);
+				[x1, y1, x2, y2] = components.map(parseFloat);
 			}
 		}
 	});
@@ -50,15 +48,25 @@
 	</div>
 	<section class="display">
 		<div class="track">
-			<div class="item">
-				<CubicBezier {x1} {y1} {x2} {y2} />
-			</div>
+			{#key animation_key}
+				<div
+					class="item custom-bezier"
+					style="animation-timing-function: cubic-bezier({x1}, {y1}, {x2}, {y2})"
+				>
+					<CubicBezier {x1} {y1} {x2} {y2} />
+				</div>
+			{/key}
 		</div>
 		<div class="track">
-			<div class="item">
-				<CubicBezier x1={0.25} y1={0.1} x2={0.25} y2={1} />
-			</div>
+			{#key animation_key}
+				<div class="item">
+					<CubicBezier x1={0.25} y1={0.1} x2={0.25} y2={1} />
+				</div>
+			{/key}
 		</div>
+	</section>
+	<section class="controls">
+		<button on:click={() => (animation_key = !animation_key)}>Play Animation</button>
 	</section>
 	<section class="library">
 		<div class="timing-function">
@@ -95,10 +103,11 @@
 		display: grid;
 		gap: 2rem;
 		grid-template-columns: auto 1fr;
-		grid-template-rows: auto 1fr 1fr;
+		grid-template-rows: auto 2fr auto 2fr;
 		grid-template-areas:
-			"ti ti"
+			"ed ti"
 			"ed di"
+			"ed co"
 			"ed li";
 	}
 	.hl1 {
@@ -106,6 +115,15 @@
 	}
 	.hl2 {
 		color: var(--highlight-2);
+	}
+	button {
+		color: currentcolor;
+		background-color: var(--highlight-1);
+		border: none;
+		padding: 1rem;
+		font-size: 1.8rem;
+		border-radius: 0.5rem;
+		cursor: pointer;
 	}
 	.timing-function {
 		width: 9rem;
@@ -125,6 +143,12 @@
 		grid-area: di;
 		width: 100%;
 		padding-inline: 5vw;
+		display: grid;
+		align-content: center;
+	}
+	.controls {
+		grid-area: co;
+		display: grid;
 	}
 	.library {
 		display: flex;
@@ -146,6 +170,8 @@
 		background-color: var(--highlight-1);
 		overflow: hidden;
 		padding: 0.5rem;
+		transform: translateX(-50%);
+		animation: move 1s forwards;
 	}
 	.track::before {
 		content: "";
@@ -156,6 +182,14 @@
 		background-color: var(--fg-00);
 		height: 1px;
 	}
+	@keyframes move {
+		0% {
+			margin-left: 0;
+		}
+		100% {
+			margin-left: 100%;
+		}
+	}
 	@media (max-width: 800px) {
 		main {
 			grid-template-columns: 1fr;
@@ -164,6 +198,7 @@
 				"ti"
 				"ed"
 				"di"
+				"co"
 				"li";
 		}
 	}

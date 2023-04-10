@@ -9,6 +9,8 @@
 	height: 100%;
 
 	--fg-00: white;
+	--fg-01: hsl(0 0% 75%);
+	--fg-02: hsl(0 0% 50%);
 	--bg-00: hsl(0 0% 2.5%);
 	--bg-01: hsl(0 0% 5%);
 	--bg-02: hsl(0 0% 7.5%);
@@ -16,11 +18,11 @@
 	--bg-04: hsl(0 0% 12.5%);
 
 	color: var(--fg-00);
-	background-color: var(--bg-02);
+	background-color: var(--bg-00);
 
 	--font-mono: "Consolas", "Courier New", monospace;
 
-	--page-width: 72rem;
+	--page-width: 100rem;
 	font-family: "Segoe UI", Roboto, Oxygen, Ubuntu;
 }
 

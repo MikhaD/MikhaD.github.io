@@ -1,0 +1,1 @@
+I created this tool in highschool during a phase where my friend and I were sending each other messages in morse code.
