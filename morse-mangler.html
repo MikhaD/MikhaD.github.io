@@ -5,14 +5,31 @@
 	<meta charset="utf-8" />
 	<link rel="shortcut icon" type="image/svg+xml" href="./img/favicon.svg" />
 	<meta name="viewport" content="width=device-width" />
+
+	<meta name="author" content="Mikha.D">
+	<meta name="description" content="The portfolio website of Mikha Davids, software developer.">
+	<meta name="keywords"
+		content="mikha, mika, mikah, davids, mikhadavids, mikhad, mikha.d, mikadavids, mikahdavids, portfolio, profile, projects">
+
+	<!-- FB Meta Tags -->
+	<meta property="og:url" content="https://mikhadavids.dev/">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Mikha's Portfolio">
+	<meta property="og:description" content="The portfolio website of Mikha Davids, software developer.">
+	<meta property="og:image"
+		content="https://raw.githubusercontent.com/MikhaD/MikhaD.github.io/main/static/img/og_1200x630.png">
+	<script>
+		// Temporary solution to redirect from github pages to custom domain.
+		if (document.location.origin === "https://mikhad.github.io") document.location.replace("https://mikhadavids.dev");
+	</script>
 	<title>Mikha's Portfolio</title>
 	<meta http-equiv="content-security-policy" content="">
 		<link href="./_app/immutable/assets/_layout.05cedfce.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/_page.fa4bc060.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.c3cb4c0e.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.9d2afe94.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.b0dbef0b.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.43804dae.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.fae9a465.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.0bb6cef6.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.614e3783.js">
 		<link rel="modulepreload" href="./_app/immutable/entry/layout.svelte.3ad52a62.js">
 		<link rel="modulepreload" href="./_app/immutable/entry/_layout.ts.6a98f88a.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout.c80ef6e6.js">
@@ -131,7 +148,7 @@
 			
 			<script>
 				{
-					__sveltekit_1af99yt = {
+					__sveltekit_19o0dh8 = {
 						env: {},
 						base: new URL(".", location).pathname.slice(0, -1),
 						element: document.currentScript.parentElement
@@ -140,10 +157,10 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.c3cb4c0e.js"),
-						import("./_app/immutable/entry/app.fae9a465.js")
+						import("./_app/immutable/entry/start.9d2afe94.js"),
+						import("./_app/immutable/entry/app.614e3783.js")
 					]).then(([kit, app]) => {
-						kit.start(app, __sveltekit_1af99yt.element, {
+						kit.start(app, __sveltekit_19o0dh8.element, {
 							node_ids: [0, 7],
 							data,
 							form: null,
