@@ -17,6 +17,8 @@
 	--bg-03: hsl(0 0% 10%);
 	--bg-04: hsl(0 0% 12.5%);
 
+	--bg-gradient: linear-gradient(135deg, aqua, teal, #83169b);
+
 	color: var(--fg-00);
 	background-color: var(--bg-00);
 
@@ -24,6 +26,8 @@
 
 	--page-width: 100rem;
 	font-family: "Segoe UI", Roboto, Oxygen, Ubuntu;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 body {
