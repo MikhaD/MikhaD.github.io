@@ -10,6 +10,7 @@ This is what will soon become my portfolio website. I previously had some basic 
 
 ## To Do
 - static/pages need to be turned into sveltekit routes.
+- Choose some fonts and get them from a CDN or host them
 
 ### cubic-bezier
 - Add mechanism to allow user to paste in a cubic-bezier

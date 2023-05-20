@@ -1,6 +1,8 @@
 <script lang="ts">
 	import BouncingArrow from "./BouncingArrow.svelte";
-	import Glitch from "./Glitch.svelte";
+	import Github from "./icons/Github.svelte";
+	import Linkedin from "./icons/Linkedin.svelte";
+	import Youtube from "./icons/Youtube.svelte";
 </script>
 
 <section>
@@ -24,12 +26,17 @@
 			<div class="mikha name">Mikha</div>
 			<div class="davids name">Davids</div>
 		</div>
-		<!-- PYTHON, RUST, JAVASCRIPT, SVELTE, TYPESCRIPT, JAVA, WEB, SOFTWARE, APP, TOOL -->
-		<!-- <div class="adjectives">
-			<Glitch text="DEVELOPER" />
-			<Glitch text="TUTOR" />
-			<Glitch text="STUDENT" />
-		</div> -->
+		<div class="links">
+			<a class="link" href="https://github.com/MikhaD" target="_blank">
+				<Github />
+			</a>
+			<a class="link" href="https://www.linkedin.com/in/mikha-davids/" target="_blank">
+				<Linkedin />
+			</a>
+			<a class="link" href="https://www.youtube.com/@mikhadavids" target="_blank">
+				<Youtube />
+			</a>
+		</div>
 	</div>
 	<a id="scroll-down" href="#projects">
 		<BouncingArrow />
@@ -44,7 +51,7 @@
 		height: 5rem;
 		inset: auto 0 0 0;
 		margin-inline: auto;
-		color: currentcolor;
+		color: var(--fg-01);
 		opacity: 0;
 		animation: fade-in 1s 3s ease-out forwards;
 	}
@@ -87,6 +94,7 @@
 		background-size: 140% 180%;
 		opacity: 0;
 		animation: fade-in 1s 2s ease-out forwards;
+		user-select: none;
 	}
 	.mikha {
 		margin-right: var(--x-offset);
@@ -99,11 +107,26 @@
 		transform: translateX(90%);
 		margin-left: var(--x-offset);
 	}
-	.adjectives {
-		display: grid;
-		padding-inline: 2rem;
-		grid-template-columns: repeat(3, 1fr);
-		place-items: center;
+	.links {
+		display: flex;
+		height: 4rem;
+		justify-content: center;
+		gap: 10vmin;
+	}
+	.link {
+		color: var(--fg-01);
+		opacity: 0;
+		height: 100%;
+		transform: translateY(5rem);
+		animation: fade-in 0.5s ease-out forwards;
+		img {
+			height: 100%;
+		}
+	}
+	@for $i from 1 through 3 {
+		.link:nth-child(#{$i}) {
+			animation-delay: #{2.5 + 0.1 * $i}s;
+		}
 	}
 
 	#logo {
@@ -176,7 +199,7 @@
 		}
 		to {
 			opacity: 1;
-			transform: translateX(0%);
+			transform: translate(0%, 0%);
 		}
 	}
 	@keyframes bouncing-arrow {
